@@ -1,22 +1,11 @@
 package com.test.demo.service.impl;
 
-import com.google.api.client.googleapis.GoogleUtils;
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.translate.Translate;
-import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
-import com.sun.org.apache.bcel.internal.util.ClassPath;
 import com.test.demo.domain.WordInfo;
 import com.test.demo.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 @Service
 public class WordServiceImpl implements WordService {
@@ -38,9 +27,9 @@ public class WordServiceImpl implements WordService {
 
     private int countOfVowel(String word) {
         int count = 0;
-        for(int i = 0; i < word.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             String symbol = String.valueOf(word.charAt(i));
-            if(VOWELS.contains(symbol)) {
+            if (VOWELS.contains(symbol)) {
                 count++;
             }
         }
@@ -49,9 +38,9 @@ public class WordServiceImpl implements WordService {
 
     private int countOfConsonant(String word) {
         int count = 0;
-        for(int i = 0; i < word.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             String symbol = String.valueOf(word.charAt(i));
-            if(!VOWELS.contains(symbol)) {
+            if (!VOWELS.contains(symbol)) {
                 count++;
             }
         }
